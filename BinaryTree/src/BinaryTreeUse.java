@@ -2,6 +2,7 @@ import java.util.Queue;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.ArrayList;
 public class BinaryTreeUse {
 	public static int minimum(BinaryTreeNode<Integer> root) {
 		if(root==null) {
@@ -161,6 +162,29 @@ public class BinaryTreeUse {
 		boolean left = isBST3(root.left,min,root.data-1);
 		return left&&right;
 	}
+	public static ArrayList<Integer> getPath(BinaryTreeNode<Integer> root, int data){
+        if(root == null){
+            return null;
+        }
+        if(root.data == data){
+            ArrayList<Integer> al = new ArrayList<>();
+            al.add(root.data);
+            return al;
+        }
+        ArrayList<Integer> leftNode = getPath(root.left,data);
+        if(leftNode!=null){
+            leftNode.add(root.data);
+            return leftNode;
+        }
+        ArrayList<Integer> rightNode = getPath(root.right,data);
+        if(rightNode!=null){
+            rightNode.add(root.data);
+            return rightNode;
+        }
+        else{
+            return null;
+        }
+	}
 	public static void main(String[] args) {
 		//----------------------------
 		//Need to rectify the takeInputLevelWise()
@@ -191,6 +215,8 @@ public class BinaryTreeUse {
 		System.out.println("Is tree BST: "+isBST(root));//complexity will be O(n^2)
 		System.out.println("Is tree BST: "+output.first);//complexity will be O(n)
 		System.out.println("Is tree BST: "+isBST3(root,Integer.MIN_VALUE,Integer.MAX_VALUE));//complexity will be O(n)
+		ArrayList<Integer> list = getPath(root,node6.data);
+		for(int i : list) System.out.print(i+" ");
 	}
 
 }
