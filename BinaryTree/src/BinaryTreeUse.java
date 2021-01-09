@@ -167,7 +167,7 @@ public class BinaryTreeUse {
 		//----------------------------
 		// TODO Auto-generated method stub
 		BinaryTreeNode<Integer> root = new BinaryTreeNode<>(4);
-		BinaryTreeNode<Integer> node1 = new BinaryTreeNode<>(4);
+		BinaryTreeNode<Integer> node1 = new BinaryTreeNode<>(2);
 		BinaryTreeNode<Integer> node2 = new BinaryTreeNode<>(6);
 		BinaryTreeNode<Integer> node3 = new BinaryTreeNode<>(1);
 		BinaryTreeNode<Integer> node4 = new BinaryTreeNode<>(3);
